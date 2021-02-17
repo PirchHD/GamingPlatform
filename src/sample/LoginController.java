@@ -2,12 +2,16 @@ package sample;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.StageStyle;
 
 import java.io.File;
 import java.net.URL;
@@ -73,6 +77,22 @@ public class LoginController implements Initializable {
             e.getCause();
         }
 
+    }
+
+    public void creatAccount(){
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Stage stageRegister = new Stage();
+            stageRegister.initStyle(StageStyle.UNDECORATED);
+            stageRegister.setScene(new Scene(root, 607, 602));
+            stageRegister.show();
+
+        }catch (Exception e){
+            e.getMessage();
+        }
     }
 
 }
