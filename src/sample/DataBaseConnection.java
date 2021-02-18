@@ -7,7 +7,6 @@ public class DataBaseConnection {
     public Connection dataBaseLink;
 
     public Connection getConnection(){
-        // try username = PirchHD, 123
         String nameDataBase = "login_db";
         String databaseUser = "root";
         String databasePassword = "";

@@ -48,8 +48,7 @@ public class LoginController implements Initializable {
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-    }
+    public void initialize(URL url, ResourceBundle resourceBundle) { }
 
     public void checkdateLogin(){
         DataBaseConnection connectNow = new DataBaseConnection();
@@ -79,7 +78,7 @@ public class LoginController implements Initializable {
 
     }
 
-    public void creatAccount(){
+    public void creatAccountForm(){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
@@ -93,6 +92,8 @@ public class LoginController implements Initializable {
         }catch (Exception e){
             e.getMessage();
         }
+
     }
+
 
 }

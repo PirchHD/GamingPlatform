@@ -27,15 +27,29 @@ public class RegisterController {
     private Button cancelButton;
     @FXML
     private Button registerButton;
+    @FXML
+    private Label messageLabelRegister;
+    @FXML
+    private PasswordField passwordTextField;
+    @FXML
+    private PasswordField confirmPasswordTextField;
+    @FXML
+    private TextField firstnameTextField;
+    @FXML
+    private TextField lastnameTextField;
+    @FXML
+    private TextField usernameTextField;
 
     @FXML
     private void cancelButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
+
     @FXML
     private void registerButtonOnAction(ActionEvent actionEvent) throws IOException {
-
+        checkPasswordTheSame();
+        registerUser();
 
         cancelButtonOnAction(actionEvent);
 
@@ -44,6 +58,41 @@ public class RegisterController {
         stageLogin.initStyle(StageStyle.UNDECORATED);
         stageLogin.setScene(new Scene(root, 564, 428));
         stageLogin.show();
+
+    }
+
+    public void checkPasswordTheSame(){
+        if(confirmPasswordTextField.getText().equals(passwordTextField.getText())){
+        }else{
+            messageLabelRegister.setText("Password does not match !");
+        }
+    }
+
+    public void registerUser(){
+        DataBaseConnection connect = new DataBaseConnection();
+        Connection connectDB = connect.getConnection();
+
+        String firstname = firstnameTextField.getText();
+        String lastname = lastnameTextField.getText();
+        String username = usernameTextField.getText();
+        String password = passwordTextField.getText();
+
+
+        String insertToRegister = "INSERT INTO user_account(lastname,firstname,username,password) " +
+                "VALUES ('" + firstname + "','" +  lastname + "','" + username + "','" + password + "')";
+
+        try{
+            Statement statement = connectDB.createStatement();
+            statement.executeUpdate(insertToRegister);
+
+            messageLabelRegister.setText("User has been registered successfully !");
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+
     }
 
 
