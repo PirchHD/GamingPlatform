@@ -48,23 +48,47 @@ public class RegisterController {
 
     @FXML
     private void registerButtonOnAction(ActionEvent actionEvent) throws IOException {
-        checkPasswordTheSame();
-        registerUser();
 
-        cancelButtonOnAction(actionEvent);
+        if(checkPasswordTheSame() == true
+            && usernameTextFieldShouldNotBeEmpty() == true) {
+
+            registerUser();
+        }
+
+      /*  cancelButtonOnAction(actionEvent);
 
         Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Stage stageLogin = new Stage();
         stageLogin.initStyle(StageStyle.UNDECORATED);
         stageLogin.setScene(new Scene(root, 564, 428));
-        stageLogin.show();
+        stageLogin.show();*/
 
     }
 
-    public void checkPasswordTheSame(){
-        if(confirmPasswordTextField.getText().equals(passwordTextField.getText())){
-        }else{
+    public boolean checkPasswordTheSame(){
+        if(passwordTextField.getText().isBlank() == true || passwordTextField.getText().isEmpty() == true) {
+            messageLabelRegister.setText("Change your password !");
+           return false;
+        }
+
+        if (confirmPasswordTextField.getText().equals(passwordTextField.getText())) {
+            return true;
+        } else {
             messageLabelRegister.setText("Password does not match !");
+            return false;
+        }
+
+    }
+
+    public boolean usernameTextFieldShouldNotBeEmpty(){
+        String temp = usernameTextField.getText().replaceAll("\\s+","");
+        usernameTextField.setText(temp);
+
+        if(usernameTextField.getText().isBlank() == true || usernameTextField.getText().isEmpty() == true){
+            messageLabelRegister.setText("Change your username");
+            return false;
+        }else{
+            return true;
         }
     }
 
@@ -88,6 +112,8 @@ public class RegisterController {
             messageLabelRegister.setText("User has been registered successfully !");
 
         }catch (Exception e){
+            messageLabelRegister.setText("your username is taken ! ");
+
             e.printStackTrace();
             e.getCause();
         }
