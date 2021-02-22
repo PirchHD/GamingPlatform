@@ -12,13 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
 
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ResourceBundle;
 
 
 public class RegisterController {
@@ -51,17 +47,18 @@ public class RegisterController {
 
         if(checkPasswordTheSame() == true
             && usernameTextFieldShouldNotBeEmpty() == true) {
-
             registerUser();
+
+            
+            cancelButtonOnAction(actionEvent);
+
+            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/login.fxml"));
+            Stage stageLogin = new Stage();
+            stageLogin.initStyle(StageStyle.UNDECORATED);
+            stageLogin.setScene(new Scene(root, 564, 428));
+            stageLogin.show();
         }
 
-      /*  cancelButtonOnAction(actionEvent);
-
-        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
-        Stage stageLogin = new Stage();
-        stageLogin.initStyle(StageStyle.UNDECORATED);
-        stageLogin.setScene(new Scene(root, 564, 428));
-        stageLogin.show();*/
 
     }
 

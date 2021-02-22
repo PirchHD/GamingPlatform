@@ -13,7 +13,6 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
 
-import java.io.File;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -64,6 +63,7 @@ public class LoginController implements Initializable {
             while (queryResult.next()){
                 if(queryResult.getInt(1) == 1) {
                     invalidMessage.setText("You are in!!!");
+                    openGamePanel();
                 }else {
                     invalidMessage.setText("Invalid login :( try again");
                 }
@@ -78,12 +78,28 @@ public class LoginController implements Initializable {
 
     }
 
+    public void openGamePanel(){
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
+
+        try{
+            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/gamePanel.fxml"));
+            Stage stageGamePanel = new Stage();
+            stageGamePanel.initStyle(StageStyle.UNDECORATED);
+            stageGamePanel.setScene(new Scene(root));
+            stageGamePanel.show();
+
+        }catch (Exception e){
+            e.getMessage();
+        }
+    }
+
     public void creatAccountForm(){
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/register.fxml"));
             Stage stageRegister = new Stage();
             stageRegister.initStyle(StageStyle.UNDECORATED);
             stageRegister.setScene(new Scene(root, 607, 602));
