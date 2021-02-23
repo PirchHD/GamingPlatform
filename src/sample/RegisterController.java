@@ -6,12 +6,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.Statement;
@@ -21,8 +23,7 @@ public class RegisterController {
 
     @FXML
     private Button cancelButton;
-    @FXML
-    private Button registerButton;
+
     @FXML
     private Label messageLabelRegister;
     @FXML
@@ -97,6 +98,7 @@ public class RegisterController {
         String lastname = lastnameTextField.getText();
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
+
 
 
         String insertToRegister = "INSERT INTO user_account(lastname,firstname,username,password) " +

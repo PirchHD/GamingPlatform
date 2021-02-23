@@ -12,7 +12,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
-import sample.GamePanel.GamePanelController;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -36,7 +35,7 @@ public class LoginController implements Initializable {
     public void loginButtonOnAction(){
 
         if(usernameTextField.getText().isBlank() == false && passwordTextField.getText().isBlank() == false){
-            checkdateLogin();
+            checkoutLogging();
         }else{
             invalidMessage.setText("Please enter username and password");
         }
@@ -52,7 +51,7 @@ public class LoginController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { }
 
-    public void checkdateLogin(){
+    public void checkoutLogging(){
         DataBaseConnection connectNow = new DataBaseConnection();
         Connection connectionDB = connectNow.getConnection();
 
