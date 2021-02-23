@@ -6,4 +6,6 @@ technologies:
 - javafx
 - jUnit 5
 - SQL / mySql (I'm using the server locally but I'm going to use some hosting)
+- SceneBuilder
+- IntelliJ <3
 - Network java (coming soon)
