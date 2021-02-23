@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
+import sample.GamePanel.GamePanelController;
 
 import java.net.URL;
 import java.sql.Connection;

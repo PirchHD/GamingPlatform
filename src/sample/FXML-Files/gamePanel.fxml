@@ -8,7 +8,6 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="907.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePanel.GamePanelController">
    <children>
       <Pane layoutX="-18.0" layoutY="-13.0" prefHeight="924.0" prefWidth="1264.0" style="-fx-background-color: #2A0033;">
@@ -16,17 +15,17 @@
             <Button fx:id="cancelButton" layoutX="35.0" layoutY="854.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #CE201C;" text="Cancel" textFill="WHITE" />
             <Separator layoutX="189.0" layoutY="144.0" opacity="0.17" prefHeight="11.0" prefWidth="1075.0" />
             <ImageView fitHeight="123.0" fitWidth="150.0" layoutX="44.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="username" layoutX="35.0" layoutY="162.0" prefHeight="27.0" prefWidth="128.0" text="USERNAME" textFill="WHITE">
+            <Label fx:id="usernameLabel" layoutX="35.0" layoutY="162.0" prefHeight="27.0" prefWidth="128.0" text="USERNAME" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="firstname" layoutX="35.0" layoutY="197.0" prefHeight="27.0" prefWidth="128.0" text="Firstname" textFill="WHITE">
+            <Label fx:id="firstnameLabel" layoutX="35.0" layoutY="197.0" prefHeight="27.0" prefWidth="128.0" text="Firstname" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="Lastname" layoutX="35.0" layoutY="234.0" prefHeight="27.0" prefWidth="128.0" text="Lastname" textFill="WHITE">
+            <Label fx:id="lastnameLabel" layoutX="35.0" layoutY="234.0" prefHeight="27.0" prefWidth="128.0" text="Lastname" textFill="WHITE">
                <font>
                   <Font size="18.0" />
                </font>
@@ -57,4 +56,3 @@
       </Pane>
    </children>
 </AnchorPane>
-
