@@ -9,6 +9,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import sample.DataBaseConnection;
+import sample.LoginController;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -44,20 +45,17 @@ public class GamePanelController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
+        username = LoginController.username;
 
 
         try {
             Connection con = new DataBaseConnection().getConnection();
             Statement myStmt = con.createStatement();
 
-            ResultSet myRs = myStmt.executeQuery("select * from user_account WHERE username = 'PirchHD';");
+            ResultSet myRs = myStmt.executeQuery("select * from user_account WHERE username = '" + username + "';");
             while (myRs.next()) {
-                // testing if it gets the data from the db
-                System.out.println(myRs.getString("firstname"));
-                System.out.println(myRs.getString("lastname"));
-
                 // attempt to put it in a textfield
+                usernameLabel.setText(myRs.getString("username"));
                 firstnameLabel.setText(myRs.getString("firstname"));
                 lastnameLabel.setText(myRs.getString("lastname"));
             }

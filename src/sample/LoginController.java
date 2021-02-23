@@ -22,6 +22,8 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
+    public static String username;
+
     @FXML
     private Button cancelButton;
     @FXML
@@ -54,6 +56,7 @@ public class LoginController implements Initializable {
         DataBaseConnection connectNow = new DataBaseConnection();
         Connection connectionDB = connectNow.getConnection();
 
+
         String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText()
                                                                 + "' AND password = '" + passwordTextField.getText() + "';";
 
@@ -63,6 +66,7 @@ public class LoginController implements Initializable {
 
             while (queryResult.next()){
                 if(queryResult.getInt(1) == 1) {
+                    username = usernameTextField.getText();
                     invalidMessage.setText("You are in!!!");
                     openGamePanel();
                 }else {
@@ -80,6 +84,7 @@ public class LoginController implements Initializable {
     }
 
     public void openGamePanel(){
+
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
