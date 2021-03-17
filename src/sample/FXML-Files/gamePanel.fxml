@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="907.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePanel.GamePanelController">
+<AnchorPane prefHeight="907.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePanelController">
    <children>
       <Pane layoutX="-18.0" layoutY="-13.0" prefHeight="924.0" prefWidth="1264.0" style="-fx-background-color: #2A0033;">
          <children>
@@ -39,7 +39,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="registerButton1" layoutX="977.0" layoutY="39.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Settings" textFill="WHITE">
+            <Button fx:id="setttingsButton" layoutX="977.0" layoutY="39.0" mnemonicParsing="false" onAction="#settingsButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Settings" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>

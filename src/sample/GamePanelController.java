@@ -1,4 +1,4 @@
-package sample.GamePanel;
+package sample;
 
 
 import javafx.event.ActionEvent;
@@ -9,14 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import sample.DataBaseConnection;
-import sample.LoginController;
 
-import java.io.File;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -34,6 +31,9 @@ public class GamePanelController implements Initializable {
     @FXML
     private Button logOutButton;
     @FXML
+    private Button setttingsButton;
+
+    @FXML
     private Label usernameLabel;
     @FXML
     private Label firstnameLabel;
@@ -45,19 +45,16 @@ public class GamePanelController implements Initializable {
 
     @FXML
     private void logOutButtonOnAction(ActionEvent actionEvent) throws IOException {
-        cancelButtonOnAction(actionEvent);
-
-    /*  TODO: it shows java.lang.reflect.InvocationTargetException check why
+        Stage stage = (Stage) logOutButton.getScene().getWindow();
+        stage.close();
 
         Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/login.fxml"));
         Stage stageLogin = new Stage();
         stageLogin.initStyle(StageStyle.UNDECORATED);
         stageLogin.setScene(new Scene(root, 564, 428));
         stageLogin.show();
-
-        */
-
     }
+
 
     @FXML
     private void cancelButtonOnAction(ActionEvent actionEvent) {
@@ -65,12 +62,24 @@ public class GamePanelController implements Initializable {
         stage.close();
     }
 
+    @FXML
+    private void settingsButtonOnAction(ActionEvent actionEvent) throws IOException {
+        cancelButtonOnAction(actionEvent);
+
+        Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/settingsPanel.fxml"));
+        Stage stageLogin = new Stage();
+        stageLogin.initStyle(StageStyle.UNDECORATED);
+        stageLogin.setScene(new Scene(root, 564, 428));
+        stageLogin.show();
+    }
+
+
+
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-
         username = LoginController.username;
-
 
         try {
             Connection con = new DataBaseConnection().getConnection();
@@ -85,7 +94,6 @@ public class GamePanelController implements Initializable {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
 
     }
 
