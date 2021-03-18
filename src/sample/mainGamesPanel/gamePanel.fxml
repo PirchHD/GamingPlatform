@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="907.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GamePanelController">
+<AnchorPane prefHeight="907.0" prefWidth="1232.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainGamesPanel.GamePanelController">
    <children>
       <Pane layoutX="-18.0" layoutY="-13.0" prefHeight="924.0" prefWidth="1264.0" style="-fx-background-color: #2A0033;">
          <children>
@@ -17,7 +17,7 @@
             <Separator layoutX="189.0" layoutY="144.0" opacity="0.17" prefHeight="11.0" prefWidth="1075.0" />
             <ImageView fx:id="ImageUser" fitHeight="113.0" fitWidth="120.0" layoutX="47.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/images.jpg" />
+                  <Image url="@../userInformation/images.jpg" />
                </image></ImageView>
             <Label fx:id="usernameLabel" layoutX="49.0" layoutY="162.0" prefHeight="27.0" prefWidth="128.0" text="USERNAME" textFill="WHITE">
                <font>

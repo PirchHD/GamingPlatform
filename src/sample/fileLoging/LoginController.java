@@ -1,4 +1,4 @@
-package sample;
+package sample.fileLoging;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -12,6 +12,8 @@ import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
+import sample.DataBaseConnection;
+import sample.mainGamesPanel.CreatorStage;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -88,11 +90,8 @@ public class LoginController implements Initializable {
         stage.close();
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/gamePanel.fxml"));
-            Stage stageGamePanel = new Stage();
-            stageGamePanel.initStyle(StageStyle.UNDECORATED);
-            stageGamePanel.setScene(new Scene(root));
-            stageGamePanel.show();
+            CreatorStage openRegisterStage = new CreatorStage();
+            openRegisterStage.creatStage("../mainGamesPanel/gamePanel.fxml",607,602);
 
         }catch (Exception e){
             e.getMessage();
@@ -104,11 +103,8 @@ public class LoginController implements Initializable {
         stage.close();
 
         try{
-            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/register.fxml"));
-            Stage stageRegister = new Stage();
-            stageRegister.initStyle(StageStyle.UNDECORATED);
-            stageRegister.setScene(new Scene(root, 607, 602));
-            stageRegister.show();
+            CreatorStage openRegisterStage = new CreatorStage();
+            openRegisterStage.creatStage("../fileRegister/register.fxml",607,602);
 
         }catch (Exception e){
             e.getMessage();

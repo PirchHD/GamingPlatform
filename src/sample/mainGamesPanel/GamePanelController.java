@@ -1,4 +1,4 @@
-package sample;
+package sample.mainGamesPanel;
 
 
 import javafx.event.ActionEvent;
@@ -12,6 +12,8 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.DataBaseConnection;
+import sample.fileLoging.LoginController;
 
 
 import java.io.IOException;
@@ -32,7 +34,6 @@ public class GamePanelController implements Initializable {
     private Button logOutButton;
     @FXML
     private Button setttingsButton;
-
     @FXML
     private Label usernameLabel;
     @FXML
@@ -42,43 +43,8 @@ public class GamePanelController implements Initializable {
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
 
-
-    @FXML
-    private void logOutButtonOnAction(ActionEvent actionEvent) throws IOException {
-        Stage stage = (Stage) logOutButton.getScene().getWindow();
-        stage.close();
-
-        Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/login.fxml"));
-        Stage stageLogin = new Stage();
-        stageLogin.initStyle(StageStyle.UNDECORATED);
-        stageLogin.setScene(new Scene(root, 564, 428));
-        stageLogin.show();
-    }
-
-
-    @FXML
-    private void cancelButtonOnAction(ActionEvent actionEvent) {
-        Stage stage = (Stage) cancelButton.getScene().getWindow();
-        stage.close();
-    }
-
-    @FXML
-    private void settingsButtonOnAction(ActionEvent actionEvent) throws IOException {
-        cancelButtonOnAction(actionEvent);
-
-        Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/settingsPanel.fxml"));
-        Stage stageLogin = new Stage();
-        stageLogin.initStyle(StageStyle.UNDECORATED);
-        stageLogin.setScene(new Scene(root, 564, 428));
-        stageLogin.show();
-    }
-
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
         username = LoginController.username;
 
         try {
@@ -91,11 +57,37 @@ public class GamePanelController implements Initializable {
                 firstnameLabel.setText(myRs.getString("firstname"));
                 lastnameLabel.setText(myRs.getString("lastname"));
             }
-        } catch (SQLException throwables) {
+        } catch (
+                SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
+    
+
+    @FXML
+    private void logOutButtonOnAction() throws IOException {
+        Stage stage = (Stage) logOutButton.getScene().getWindow();
+        stage.close();
+
+        CreatorStage loginStage = new CreatorStage();
+        loginStage.creatStage("../fileLoging/login.fxml", 564, 428);
+    }
+
+    @FXML
+    private void cancelButtonOnAction() {
+        GeneralButtonFunctions cancelAction = new GeneralButtonFunctions();
+        cancelAction.cancelButtonOnAction(cancelButton);
+    }
+
+    @FXML
+    private void settingsButtonOnAction() throws IOException {
+        cancelButtonOnAction();
+
+        CreatorStage stage = new CreatorStage();
+        stage.creatStage("buttonSettings/settingsPanel.fxml", 607, 602);
+    }
+
+
 
 
 }
