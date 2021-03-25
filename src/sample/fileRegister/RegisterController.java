@@ -100,7 +100,7 @@ public class RegisterController {
 
 
 
-        String insertToRegister = "INSERT INTO user_account(lastname,firstname,username,password) " +
+        String insertToRegister = "INSERT INTO users_information(lastname,firstname,username,password) " +
                 "VALUES ('" + firstname + "','" +  lastname + "','" + username + "','" + password + "')";
 
         try{

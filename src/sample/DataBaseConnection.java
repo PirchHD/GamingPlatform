@@ -7,10 +7,10 @@ public class DataBaseConnection {
     public Connection dataBaseLink;
 
     public Connection getConnection(){
-        String nameDataBase = "login_db";
-        String databaseUser = "root";
-        String databasePassword = "";
-        String url = "jdbc:mysql://localhost/" + nameDataBase + "?serverTimezone=UTC";
+        String nameDataBase = "gaming_db";
+        String databaseUser = "pirch_root";
+        String databasePassword = "f185dbb0";
+        String url = "jdbc:mysql://db4free.net:3306/gaming_db?server=1&db=gaming_db";
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");

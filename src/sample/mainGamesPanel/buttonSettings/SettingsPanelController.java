@@ -7,7 +7,7 @@ import sample.mainGamesPanel.GeneralButtonFunctions;
 
 import java.io.IOException;
 
-
+//https://www.promotic.eu/pl/pmdoc/Subsystems/Db/MsSQL/Statmn/Update.htm
 
 public class SettingsPanelController {
 
@@ -15,18 +15,21 @@ public class SettingsPanelController {
     private Button cancelButton;
     @FXML
     private Button setttingsButton;
-
     @FXML
-    private void settingsButtonOnAction() throws IOException {
-        CreatorStage stage = new CreatorStage();
-        stage.creatStage("buttonSettings/settingsPanel.fxml", 607, 602);
-    }
+    private Button logOutButton;
 
     @FXML
     private void cancelButtonOnAction() {
         GeneralButtonFunctions cancelAction = new GeneralButtonFunctions();
         cancelAction.cancelButtonOnAction(cancelButton);
     }
+
+    @FXML
+    private void logOutButtonOnAction() throws IOException {
+        GeneralButtonFunctions logOutButtonAction = new GeneralButtonFunctions();
+        logOutButtonAction.cancelButtonOnAction(logOutButton);
+    }
+
 
 
 }

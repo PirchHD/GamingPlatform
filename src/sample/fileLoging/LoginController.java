@@ -58,7 +58,7 @@ public class LoginController implements Initializable {
         Connection connectionDB = connectNow.getConnection();
 
 
-        String verifyLogin = "SELECT count(1) FROM user_account WHERE username = '" + usernameTextField.getText()
+        String verifyLogin = "SELECT count(1) FROM users_information WHERE username = '" + usernameTextField.getText()
                                                                 + "' AND password = '" + passwordTextField.getText() + "';";
 
         try{
@@ -91,7 +91,7 @@ public class LoginController implements Initializable {
 
         try{
             CreatorStage openRegisterStage = new CreatorStage();
-            openRegisterStage.creatStage("../mainGamesPanel/gamePanel.fxml",607,602);
+            openRegisterStage.creatStage("../mainGamesPanel/gamePanel.fxml",1232,907);
 
         }catch (Exception e){
             e.getMessage();

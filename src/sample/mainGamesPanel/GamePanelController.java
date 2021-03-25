@@ -51,7 +51,7 @@ public class GamePanelController implements Initializable {
             Connection con = new DataBaseConnection().getConnection();
             Statement myStmt = con.createStatement();
 
-            ResultSet myRs = myStmt.executeQuery("select * from user_account WHERE username = '" + username + "';");
+            ResultSet myRs = myStmt.executeQuery("select * from users_information WHERE username = '" + username + "';");
             while (myRs.next()) {
                 usernameLabel.setText(myRs.getString("username"));
                 firstnameLabel.setText(myRs.getString("firstname"));
@@ -66,11 +66,8 @@ public class GamePanelController implements Initializable {
 
     @FXML
     private void logOutButtonOnAction() throws IOException {
-        Stage stage = (Stage) logOutButton.getScene().getWindow();
-        stage.close();
-
-        CreatorStage loginStage = new CreatorStage();
-        loginStage.creatStage("../fileLoging/login.fxml", 564, 428);
+        GeneralButtonFunctions logOutButtonAction = new GeneralButtonFunctions();
+        logOutButtonAction.cancelButtonOnAction(logOutButton);
     }
 
     @FXML
@@ -81,10 +78,8 @@ public class GamePanelController implements Initializable {
 
     @FXML
     private void settingsButtonOnAction() throws IOException {
-        cancelButtonOnAction();
-
-        CreatorStage stage = new CreatorStage();
-        stage.creatStage("buttonSettings/settingsPanel.fxml", 607, 602);
+        GeneralButtonFunctions settingsAction = new GeneralButtonFunctions();
+        settingsAction.settingsButtonOnAction(setttingsButton);
     }
 
 
