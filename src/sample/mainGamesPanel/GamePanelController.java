@@ -35,6 +35,12 @@ public class GamePanelController implements Initializable {
     @FXML
     private Button setttingsButton;
     @FXML
+    private Button homeButton;
+    @FXML
+    private Button yourScoreButton;
+    @FXML
+    private Button globalButton;
+    @FXML
     private Label usernameLabel;
     @FXML
     private Label firstnameLabel;
@@ -49,12 +55,11 @@ public class GamePanelController implements Initializable {
          firstnameLabel.setText(Data_User.firstname);
          lastnameLabel.setText(Data_User.lastname);
     }
-    
 
     @FXML
     private void logOutButtonOnAction() throws IOException {
-        GeneralButtonFunctions logOutButtonAction = new GeneralButtonFunctions();
-        logOutButtonAction.cancelButtonOnAction(logOutButton);
+        GeneralButtonFunctions logOutAction = new GeneralButtonFunctions();
+        logOutAction.logOutButtonOnAction(logOutButton);
     }
 
     @FXML

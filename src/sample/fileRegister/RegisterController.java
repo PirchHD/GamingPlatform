@@ -48,11 +48,10 @@ public class RegisterController {
         if(checkPasswordTheSame() == true
             && usernameTextFieldShouldNotBeEmpty() == true) {
             registerUser();
-
             
             cancelButtonOnAction(actionEvent);
 
-            Parent root = FXMLLoader.load(getClass().getResource("FXML-Files/login.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../fileLoging/login.fxml"));
             Stage stageLogin = new Stage();
             stageLogin.initStyle(StageStyle.UNDECORATED);
             stageLogin.setScene(new Scene(root, 564, 428));

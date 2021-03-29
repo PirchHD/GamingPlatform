@@ -17,7 +17,7 @@ public class GeneralButtonFunctions {
     }
 
     @FXML
-    private void logOutButtonOnAction(Button logOutButton) throws IOException {
+    public void logOutButtonOnAction(Button logOutButton) throws IOException {
         Stage stage = (Stage) logOutButton.getScene().getWindow();
         stage.close();
 
@@ -31,10 +31,6 @@ public class GeneralButtonFunctions {
 
         CreatorStage stage = new CreatorStage();
         stage.creatStage("buttonSettings/settingsPanel.fxml",1232,907);
-    }
-
-    public void initializeDataUserToStage(Label usernameLabel, Label firstnameLabel, Label lastnameLabel){
-
     }
 
 

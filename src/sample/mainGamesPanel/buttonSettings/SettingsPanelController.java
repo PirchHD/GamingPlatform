@@ -44,8 +44,8 @@ public class SettingsPanelController implements Initializable {
 
     @FXML
     private void logOutButtonOnAction() throws IOException {
-        GeneralButtonFunctions logOutButtonAction = new GeneralButtonFunctions();
-        logOutButtonAction.cancelButtonOnAction(logOutButton);
+        GeneralButtonFunctions logOutAction = new GeneralButtonFunctions();
+        logOutAction.logOutButtonOnAction(logOutButton);
     }
 
 
