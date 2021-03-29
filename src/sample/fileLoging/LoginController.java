@@ -14,10 +14,12 @@ import javafx.scene.control.Label;
 import javafx.stage.StageStyle;
 import sample.DataBaseConnection;
 import sample.mainGamesPanel.CreatorStage;
+import sample.userInformation.Data_User;
 
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
@@ -68,6 +70,9 @@ public class LoginController implements Initializable {
             while (queryResult.next()){
                 if(queryResult.getInt(1) == 1) {
                     username = usernameTextField.getText();
+
+                    initializeDataUserToClassData_User();
+
                     invalidMessage.setText("You are in!!!");
                     openGamePanel();
                 }else {
@@ -112,5 +117,22 @@ public class LoginController implements Initializable {
 
     }
 
+    public void initializeDataUserToClassData_User(){
+
+        try {
+            Connection con = new DataBaseConnection().getConnection();
+            Statement myStmt = con.createStatement();
+
+            ResultSet myRs = myStmt.executeQuery("select * from users_information WHERE username = '" + username + "';");
+            while (myRs.next()) {
+                Data_User.username = myRs.getString("username");
+                Data_User.firstname = myRs.getString("firstname");
+                Data_User.lastname = myRs.getString("lastname");
+            }
+        } catch (
+                SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 
 }

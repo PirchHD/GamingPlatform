@@ -3,6 +3,7 @@ package sample.mainGamesPanel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -30,6 +31,10 @@ public class GeneralButtonFunctions {
 
         CreatorStage stage = new CreatorStage();
         stage.creatStage("buttonSettings/settingsPanel.fxml",1232,907);
+    }
+
+    public void initializeDataUserToStage(Label usernameLabel, Label firstnameLabel, Label lastnameLabel){
+
     }
 
 

@@ -16,7 +16,6 @@
         <SOURCES />
       </library>
     </orderEntry>
-    <orderEntry type="library" name="java-sdk-15" level="project" />
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
@@ -31,5 +30,7 @@
         <jarDirectory url="file://C:/Program Files/Java/javafx-sdk-15.0.1/lib" recursive="false" type="SOURCES" />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="javafx-ssk-15.0.1" level="application" />
+    <orderEntry type="library" name="lib" level="project" />
   </component>
 </module>

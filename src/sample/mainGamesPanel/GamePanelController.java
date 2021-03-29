@@ -14,6 +14,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.DataBaseConnection;
 import sample.fileLoging.LoginController;
+import sample.userInformation.Data_User;
 
 
 import java.io.IOException;
@@ -26,7 +27,6 @@ import java.util.ResourceBundle;
 
 public class GamePanelController implements Initializable {
 
-    private String username;
 
     @FXML
     private Button cancelButton;
@@ -45,22 +45,9 @@ public class GamePanelController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        username = LoginController.username;
-
-        try {
-            Connection con = new DataBaseConnection().getConnection();
-            Statement myStmt = con.createStatement();
-
-            ResultSet myRs = myStmt.executeQuery("select * from users_information WHERE username = '" + username + "';");
-            while (myRs.next()) {
-                usernameLabel.setText(myRs.getString("username"));
-                firstnameLabel.setText(myRs.getString("firstname"));
-                lastnameLabel.setText(myRs.getString("lastname"));
-            }
-        } catch (
-                SQLException throwables) {
-            throwables.printStackTrace();
-        }
+         usernameLabel.setText(Data_User.username);
+         firstnameLabel.setText(Data_User.firstname);
+         lastnameLabel.setText(Data_User.lastname);
     }
     
 
