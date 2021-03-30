@@ -37,7 +37,7 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="registerButton" layoutX="241.0" layoutY="39.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Home" textFill="WHITE">
+            <Button fx:id="homeButton" layoutX="241.0" layoutY="39.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Home" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>

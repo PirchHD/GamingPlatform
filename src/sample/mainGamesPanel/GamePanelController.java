@@ -74,6 +74,12 @@ public class GamePanelController implements Initializable {
         settingsAction.settingsButtonOnAction(setttingsButton);
     }
 
+    @FXML
+    private void homeButtonOnAction() throws IOException {
+        GeneralButtonFunctions homeAction = new GeneralButtonFunctions();
+        homeAction.openMainPanel();
+    }
+
 
 
 

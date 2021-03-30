@@ -16,6 +16,7 @@ import sample.DataBaseConnection;
 import sample.mainGamesPanel.CreatorStage;
 import sample.userInformation.Data_User;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -90,7 +91,6 @@ public class LoginController implements Initializable {
     }
 
     public void openGamePanel(){
-
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
@@ -103,17 +103,12 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void creatAccountForm(){
+    public void creatAccountForm() throws IOException {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
 
-        try{
-            CreatorStage openRegisterStage = new CreatorStage();
-            openRegisterStage.creatStage("../fileRegister/register.fxml",607,602);
-
-        }catch (Exception e){
-            e.getMessage();
-        }
+        CreatorStage registerStage = new CreatorStage();
+        registerStage.creatStage("../fileRegister/register.fxml", 607, 602);
 
     }
 

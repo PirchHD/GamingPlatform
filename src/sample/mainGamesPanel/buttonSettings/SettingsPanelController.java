@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 import sample.mainGamesPanel.CreatorStage;
 import sample.mainGamesPanel.GeneralButtonFunctions;
 import sample.userInformation.Data_User;
@@ -21,7 +22,10 @@ public class SettingsPanelController implements Initializable {
     @FXML
     private Button setttingsButton;
     @FXML
+    private Button homeButton;
+    @FXML
     private Button logOutButton;
+
     @FXML
     private Label usernameLabel;
     @FXML
@@ -46,6 +50,13 @@ public class SettingsPanelController implements Initializable {
     private void logOutButtonOnAction() throws IOException {
         GeneralButtonFunctions logOutAction = new GeneralButtonFunctions();
         logOutAction.logOutButtonOnAction(logOutButton);
+    }
+
+    @FXML
+    private void homeButtonOnAction(){
+        cancelButtonOnAction();
+        GeneralButtonFunctions homeAction = new GeneralButtonFunctions();
+        homeAction.openMainPanel();
     }
 
 

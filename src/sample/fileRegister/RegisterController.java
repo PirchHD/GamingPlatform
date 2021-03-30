@@ -22,7 +22,6 @@ public class RegisterController {
 
     @FXML
     private Button cancelButton;
-
     @FXML
     private Label messageLabelRegister;
     @FXML
