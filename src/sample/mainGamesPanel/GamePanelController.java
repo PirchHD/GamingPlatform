@@ -34,14 +34,7 @@ public class GamePanelController implements Initializable {
     private Button cancelButton;
     @FXML
     private Button logOutButton;
-    @FXML
-    private Button setttingsButton;
-    @FXML
-    private Button homeButton;
-    @FXML
-    private Button yourScoreButton;
-    @FXML
-    private Button globalButton;
+
     @FXML
     private Label usernameLabel;
     @FXML
@@ -50,10 +43,13 @@ public class GamePanelController implements Initializable {
     private Label lastnameLabel;
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
-   @FXML
+
+    @FXML
    private AnchorPane settingsPanel;
     @FXML
     private AnchorPane homePanel;
+    @FXML
+    private AnchorPane yourScorePanel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,6 +61,7 @@ public class GamePanelController implements Initializable {
     }
 
     public void allPanelsetVisableFalse(){
+        yourScorePanel.setVisible(false);
         settingsPanel.setVisible(false);
         homePanel.setVisible(false);
     }
@@ -85,15 +82,21 @@ public class GamePanelController implements Initializable {
     }
 
     @FXML
-    private void settingsButtonOnAction() throws IOException {
+    private void settingsButtonOnAction(){
         allPanelsetVisableFalse();
         settingsPanel.setVisible(true);
     }
 
     @FXML
-    private void homeButtonOnAction() throws IOException {
+    private void homeButtonOnAction(){
         allPanelsetVisableFalse();
         homePanel.setVisible(true);
+    }
+
+    @FXML
+    private void yourScoreButtonOnAction(){
+        allPanelsetVisableFalse();
+        yourScorePanel.setVisible(true);
     }
 
 

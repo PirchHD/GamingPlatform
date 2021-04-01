@@ -47,7 +47,7 @@
                   <Font size="36.0" />
                </font>
             </Button>
-            <Button fx:id="registerButton2" layoutX="487.0" layoutY="39.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Your scores" textFill="WHITE">
+            <Button fx:id="registerButton2" layoutX="487.0" layoutY="39.0" mnemonicParsing="false" onAction="#yourScoreButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Your scores" textFill="WHITE">
                <font>
                   <Font size="36.0" />
                </font>
@@ -75,9 +75,18 @@
                </children>
             </AnchorPane>
             <Separator layoutX="179.0" layoutY="14.0" opacity="0.17" orientation="VERTICAL" prefHeight="918.0" prefWidth="28.0" />
+            <AnchorPane fx:id="yourScorePanel" layoutX="196.0" layoutY="158.0" prefHeight="621.0" prefWidth="860.0">
+               <children>
+                  <Label fx:id="usernameLabel11" prefHeight="92.0" prefWidth="183.0" text="Your score" textFill="WHITE">
+                     <font>
+                        <Font size="33.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
             <AnchorPane fx:id="homePanel" layoutX="193.0" layoutY="152.0" prefHeight="779.0" prefWidth="1056.0">
                <children>
-                  <Label fx:id="usernameLabel11" layoutX="400.0" layoutY="10.0" prefHeight="92.0" prefWidth="128.0" text="Home" textFill="WHITE">
+                  <Label fx:id="usernameLabel111" layoutX="464.0" layoutY="14.0" prefHeight="92.0" prefWidth="128.0" text="Home" textFill="WHITE">
                      <font>
                         <Font size="33.0" />
                      </font>
