@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import sample.DataBaseConnection;
@@ -17,6 +18,7 @@ import sample.fileLoging.LoginController;
 import sample.userInformation.Data_User;
 
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -48,37 +50,53 @@ public class GamePanelController implements Initializable {
     private Label lastnameLabel;
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
+   @FXML
+   private AnchorPane settingsPanel;
+    @FXML
+    private AnchorPane homePanel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+         allPanelsetVisableFalse();
+         homePanel.setVisible(true);
          usernameLabel.setText(Data_User.username);
          firstnameLabel.setText(Data_User.firstname);
          lastnameLabel.setText(Data_User.lastname);
     }
 
+    public void allPanelsetVisableFalse(){
+        settingsPanel.setVisible(false);
+        homePanel.setVisible(false);
+    }
+
     @FXML
     private void logOutButtonOnAction() throws IOException {
-        GeneralButtonFunctions logOutAction = new GeneralButtonFunctions();
-        logOutAction.logOutButtonOnAction(logOutButton);
+        Stage stage = (Stage) logOutButton.getScene().getWindow();
+        stage.close();
+
+        CreatorStage loginStage = new CreatorStage();
+        loginStage.creatStage("../fileLoging/login.fxml", 564, 428);
     }
 
     @FXML
     private void cancelButtonOnAction() {
-        GeneralButtonFunctions cancelAction = new GeneralButtonFunctions();
-        cancelAction.cancelButtonOnAction(cancelButton);
+        Stage stage = (Stage) cancelButton.getScene().getWindow();
+        stage.close();
     }
 
     @FXML
     private void settingsButtonOnAction() throws IOException {
-        GeneralButtonFunctions settingsAction = new GeneralButtonFunctions();
-        settingsAction.settingsButtonOnAction(setttingsButton);
+        allPanelsetVisableFalse();
+        settingsPanel.setVisible(true);
     }
 
     @FXML
     private void homeButtonOnAction() throws IOException {
-        GeneralButtonFunctions homeAction = new GeneralButtonFunctions();
-        homeAction.openMainPanel();
+        allPanelsetVisableFalse();
+        homePanel.setVisible(true);
     }
+
+
 
 
 
