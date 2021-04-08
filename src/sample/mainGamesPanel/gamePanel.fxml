@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -13,10 +15,10 @@
 
 <AnchorPane xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainGamesPanel.GamePanelController">
    <children>
-      <Pane layoutY="-13.0" prefHeight="926.0" prefWidth="1246.0" style="-fx-background-color: #2A0033;">
+      <Pane layoutY="-13.0" prefHeight="926.0" prefWidth="1246.0" style="-fx-background-color: #2A0033;" stylesheets="@main.css">
          <children>
             <Button fx:id="cancelButton" layoutX="35.0" layoutY="854.0" mnemonicParsing="false" onAction="#cancelButtonOnAction" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #CE201C;" text="Cancel" textFill="WHITE" />
-            <Separator layoutX="189.0" layoutY="144.0" opacity="0.17" prefHeight="11.0" prefWidth="1075.0" />
+            <Separator layoutX="189.0" layoutY="144.0" opacity="0.17" prefHeight="17.0" prefWidth="1075.0" />
             <ImageView fx:id="ImageUser" fitHeight="113.0" fitWidth="120.0" layoutX="47.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../userInformation/images.jpg" />
@@ -37,62 +39,39 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="homeButton" layoutX="241.0" layoutY="39.0" mnemonicParsing="false" onAction="#homeButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Home" textFill="WHITE">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Button>
-            <Button fx:id="setttingsButton" layoutX="977.0" layoutY="39.0" mnemonicParsing="false" onAction="#settingsButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Settings" textFill="WHITE">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Button>
-            <Button fx:id="registerButton2" layoutX="487.0" layoutY="39.0" mnemonicParsing="false" onAction="#yourScoreButtonOnAction" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Your scores" textFill="WHITE">
-               <font>
-                  <Font size="36.0" />
-               </font>
-            </Button>
-            <Button fx:id="registerButton21" layoutX="732.0" layoutY="39.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="232.0" style="-fx-background-color: #FC8831;" text="Global Score" textFill="WHITE">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
             <Button fx:id="logOutButton" layoutX="35.0" layoutY="794.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #CE201C;" text="log out" textFill="WHITE" />
-            <AnchorPane fx:id="settingsPanel" layoutX="195.0" layoutY="148.0" prefHeight="779.0" prefWidth="1056.0">
-               <children>
-                  <TextField fx:id="phoneTextField" layoutX="393.0" layoutY="259.0" prefHeight="36.0" prefWidth="272.0" promptText="Phone number" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                  <Label fx:id="usernameLabel1" layoutX="465.0" layoutY="30.0" prefHeight="27.0" prefWidth="128.0" text="Settings" textFill="WHITE">
-                     <font>
-                        <Font size="33.0" />
-                     </font>
-                  </Label>
-                  <Separator layoutX="314.0" layoutY="80.0" opacity="0.17" prefHeight="11.0" prefWidth="430.0" />
-                  <TextField fx:id="firstnameTextField" layoutX="393.0" layoutY="109.0" prefHeight="36.0" prefWidth="272.0" promptText="Firstname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                  <TextField fx:id="lastnameTextField" layoutX="393.0" layoutY="158.0" prefHeight="36.0" prefWidth="272.0" promptText="Lastname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                  <TextField fx:id="usernameTextField" layoutX="393.0" layoutY="210.0" prefHeight="36.0" prefWidth="272.0" promptText="Username" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                  <PasswordField fx:id="passwordTextField" layoutX="393.0" layoutY="312.0" prefHeight="36.0" prefWidth="272.0" promptText="Password" style="-fx-border-color: #964319; -fx-border-radius: 20; -fx-background-color: #2A0033; -fx-background-insets: 0;" />
-                  <Button fx:id="registerButton1" layoutX="387.0" layoutY="374.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="272.0" style="-fx-background-color: #FC8831;" text="Change" textFill="WHITE" />
-               </children>
-            </AnchorPane>
             <Separator layoutX="179.0" layoutY="14.0" opacity="0.17" orientation="VERTICAL" prefHeight="918.0" prefWidth="28.0" />
-            <AnchorPane fx:id="yourScorePanel" layoutX="196.0" layoutY="158.0" prefHeight="621.0" prefWidth="860.0">
-               <children>
-                  <Label fx:id="usernameLabel11" prefHeight="92.0" prefWidth="183.0" text="Your score" textFill="WHITE">
-                     <font>
-                        <Font size="33.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
-            <AnchorPane fx:id="homePanel" layoutX="193.0" layoutY="152.0" prefHeight="779.0" prefWidth="1056.0">
-               <children>
-                  <Label fx:id="usernameLabel111" layoutX="464.0" layoutY="14.0" prefHeight="92.0" prefWidth="128.0" text="Home" textFill="WHITE">
-                     <font>
-                        <Font size="33.0" />
-                     </font>
-                  </Label>
-               </children>
-            </AnchorPane>
+            <TabPane layoutX="194.0" layoutY="15.0" prefHeight="913.0" prefWidth="1058.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                  <Tab text="HOME">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="627.0" />
+                    </content>
+                  </Tab>
+                <Tab text="Your scores" />
+                <Tab text="Global Score" />
+                  <Tab text="Settings">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextField fx:id="phoneTextField" layoutX="399.0" layoutY="143.0" prefHeight="36.0" prefWidth="272.0" promptText="Phone number" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+                              <Label fx:id="usernameLabel1" layoutX="465.0" layoutY="58.0" prefHeight="27.0" prefWidth="128.0" text="Settings" textFill="WHITE">
+                                 <font>
+                                    <Font size="33.0" />
+                                 </font>
+                              </Label>
+                              <Separator layoutX="314.0" layoutY="119.0" opacity="0.17" prefHeight="11.0" prefWidth="430.0" />
+                              <TextField fx:id="firstnameTextField" layoutX="399.0" layoutY="199.0" prefHeight="36.0" prefWidth="272.0" promptText="Firstname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+                              <TextField fx:id="lastnameTextField" layoutX="399.0" layoutY="258.0" prefHeight="36.0" prefWidth="272.0" promptText="Lastname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+                              <TextField fx:id="usernameTextField" layoutX="399.0" layoutY="310.0" prefHeight="36.0" prefWidth="272.0" promptText="Username" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+                              <PasswordField fx:id="passwordTextField" layoutX="399.0" layoutY="362.0" prefHeight="36.0" prefWidth="272.0" promptText="Password" style="-fx-border-color: #964319; -fx-border-radius: 20; -fx-background-color: #2A0033; -fx-background-insets: 0;" />
+                              <Button fx:id="registerButton1" layoutX="399.0" layoutY="422.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="272.0" style="-fx-background-color: #FC8831;" text="Change" textFill="WHITE" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
          </children>
       </Pane>
    </children>
