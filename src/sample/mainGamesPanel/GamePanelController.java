@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tab;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -44,6 +45,9 @@ public class GamePanelController implements Initializable {
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
 
+    @FXML
+    private Tab settingsTabPage;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
          usernameLabel.setText(Data_User.username);
@@ -68,19 +72,6 @@ public class GamePanelController implements Initializable {
         stage.close();
     }
 
-    @FXML
-    private void settingsButtonOnAction(){
-
-    }
-
-    @FXML
-    private void homeButtonOnAction(){
-
-    }
-
-    @FXML
-    private void yourScoreButtonOnAction(){
-    }
 
 
 

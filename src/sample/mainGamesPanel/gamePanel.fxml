@@ -48,27 +48,14 @@
                       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="627.0" />
                     </content>
                   </Tab>
-                <Tab text="Your scores" />
-                <Tab text="Global Score" />
-                  <Tab text="Settings">
-                    <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                           <children>
-                              <TextField fx:id="phoneTextField" layoutX="399.0" layoutY="143.0" prefHeight="36.0" prefWidth="272.0" promptText="Phone number" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                              <Label fx:id="usernameLabel1" layoutX="465.0" layoutY="58.0" prefHeight="27.0" prefWidth="128.0" text="Settings" textFill="WHITE">
-                                 <font>
-                                    <Font size="33.0" />
-                                 </font>
-                              </Label>
-                              <Separator layoutX="314.0" layoutY="119.0" opacity="0.17" prefHeight="11.0" prefWidth="430.0" />
-                              <TextField fx:id="firstnameTextField" layoutX="399.0" layoutY="199.0" prefHeight="36.0" prefWidth="272.0" promptText="Firstname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                              <TextField fx:id="lastnameTextField" layoutX="399.0" layoutY="258.0" prefHeight="36.0" prefWidth="272.0" promptText="Lastname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                              <TextField fx:id="usernameTextField" layoutX="399.0" layoutY="310.0" prefHeight="36.0" prefWidth="272.0" promptText="Username" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
-                              <PasswordField fx:id="passwordTextField" layoutX="399.0" layoutY="362.0" prefHeight="36.0" prefWidth="272.0" promptText="Password" style="-fx-border-color: #964319; -fx-border-radius: 20; -fx-background-color: #2A0033; -fx-background-insets: 0;" />
-                              <Button fx:id="registerButton1" layoutX="399.0" layoutY="422.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="272.0" style="-fx-background-color: #FC8831;" text="Change" textFill="WHITE" />
-                           </children>
-                        </AnchorPane>
-                    </content>
+                <Tab text="Your scores" >
+                    <fx:include source="yourScoreTab.fxml"/>
+                </Tab>
+                  <Tab fx:id="globalScoreTabPage" text="Global Score" >
+                      <fx:include source="globalScoreTab.fxml"/>
+                  </Tab>
+                  <Tab fx:id="settingsTabPage" text="Settings">
+                  <fx:include source="settingsTab.fxml"/>
                   </Tab>
               </tabs>
             </TabPane>
