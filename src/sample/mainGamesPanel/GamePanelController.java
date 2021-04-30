@@ -45,8 +45,6 @@ public class GamePanelController implements Initializable {
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
 
-    @FXML
-    private Tab settingsTabPage;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

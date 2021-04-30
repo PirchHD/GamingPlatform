@@ -26,7 +26,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
 
-    public static String username;
+    private static String username;
 
     @FXML
     private Button cancelButton;
