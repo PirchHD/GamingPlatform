@@ -34,17 +34,15 @@ public class Data_User {
         }
     }
 
-    public void changeDataToDatabase(){
+    public void changeDataToDatabase(String firstname, String lastname){
         try {
             Connection con = new DataBaseConnection().getConnection();
             Statement myStmt = con.createStatement();
 // UPDATE users_information SET firstname= 'Szymon', lastname = 'Prochal' WHERE username = 'PirchHD';
-            ResultSet myRs = myStmt.executeQuery("UPDATE user_information SET firstname= " + "WHERE username = '" + username + "';");
-            while (myRs.next()) {
-                this.username = myRs.getString("username");
-                this.firstname = myRs.getString("firstname");
-                this.lastname = myRs.getString("lastname");
-            }
+            int myRs = myStmt.executeUpdate("UPDATE users_information SET " +
+                    "firstname = '" + firstname + "'," +
+                    "lastname = '" + lastname + "'" +
+                    "WHERE username = '" + Data_User.username + "';");
         } catch (
                 SQLException throwables) {
             throwables.printStackTrace();

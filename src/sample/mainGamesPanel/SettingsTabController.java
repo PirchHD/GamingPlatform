@@ -35,8 +35,10 @@ public class SettingsTabController implements Initializable {
     }
 
     public void changeButtonOnAction() {
-        if(firstnameTextField.getText().equals(Data_User.firstname) == false){
-            phoneTextField.setText("ja cie krece");
+        if(firstnameTextField.getText().equals(Data_User.firstname) == false
+            || lastnameTextField.getText().equals(Data_User.lastname) == false){
+            Data_User data_user = new Data_User(Data_User.username);
+            data_user.changeDataToDatabase(firstnameTextField.getText(),lastnameTextField.getText());
         }
     }
 }
