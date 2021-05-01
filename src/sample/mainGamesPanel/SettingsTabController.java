@@ -31,14 +31,20 @@ public class SettingsTabController implements Initializable {
 
         firstnameTextField.setText(data_user.firstname);
         lastnameTextField.setText(data_user.lastname);
-        passwordTextField.setText("Nope");
+        passwordTextField.setText("password");
     }
 
     public void changeButtonOnAction() {
-        if(firstnameTextField.getText().equals(Data_User.firstname) == false
-            || lastnameTextField.getText().equals(Data_User.lastname) == false){
+        if(!firstnameTextField.getText().equals(Data_User.firstname)
+            || !lastnameTextField.getText().equals(Data_User.lastname) ){
             Data_User data_user = new Data_User(Data_User.username);
             data_user.changeDataToDatabase(firstnameTextField.getText(),lastnameTextField.getText());
         }
+
+        if(!passwordTextField.getText().equals("password")){
+            Data_User data_user = new Data_User(Data_User.username);
+            data_user.changePassword(passwordTextField.getText());
+        }
+
     }
 }

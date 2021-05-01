@@ -34,14 +34,13 @@ public class Data_User {
         }
     }
 
-    public void changeDataToDatabase(String firstname, String lastname){
+    public void changeDataToDatabase(String newFirstname, String newLastname){
         try {
             Connection con = new DataBaseConnection().getConnection();
             Statement myStmt = con.createStatement();
-// UPDATE users_information SET firstname= 'Szymon', lastname = 'Prochal' WHERE username = 'PirchHD';
             int myRs = myStmt.executeUpdate("UPDATE users_information SET " +
-                    "firstname = '" + firstname + "'," +
-                    "lastname = '" + lastname + "'" +
+                    "firstname = '" + newFirstname + "'," +
+                    "lastname = '" + newLastname + "'" +
                     "WHERE username = '" + Data_User.username + "';");
         } catch (
                 SQLException throwables) {
@@ -50,7 +49,19 @@ public class Data_User {
     }
 
 
-
+    public void changePassword(String newPassword) {
+        try {
+            Connection con = new DataBaseConnection().getConnection();
+            Statement myStmt = con.createStatement();
+// UPDATE users_information SET firstname= 'Szymon', lastname = 'Prochal' WHERE username = 'PirchHD';
+            int myRs = myStmt.executeUpdate("UPDATE users_information SET " +
+                    "password = '" + newPassword + "'" +
+                    "WHERE username = '" + Data_User.username + "';");
+        } catch (
+                SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
 
 
