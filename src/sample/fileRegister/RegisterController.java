@@ -43,8 +43,8 @@ public class RegisterController {
 
     @FXML
     private void registerButtonOnAction(ActionEvent actionEvent) throws IOException {
-
-        if(checkPasswordTheSame() == true
+        String password = passwordTextField.getText();
+        if(checkPasswordTheSame(password) == true
             && usernameTextFieldShouldNotBeEmpty() == true) {
             registerUser();
             
@@ -60,13 +60,13 @@ public class RegisterController {
 
     }
 
-    public boolean checkPasswordTheSame(){
-        if(passwordTextField.getText().isBlank() == true || passwordTextField.getText().isEmpty() == true) {
+    public boolean checkPasswordTheSame(String password){
+        if(password.isBlank() == true || password.isEmpty() == true) {
             messageLabelRegister.setText("Change your password !");
            return false;
         }
 
-        if (confirmPasswordTextField.getText().equals(passwordTextField.getText())) {
+        if (confirmPasswordTextField.getText().equals(password)) {
             return true;
         } else {
             messageLabelRegister.setText("Password does not match !");
