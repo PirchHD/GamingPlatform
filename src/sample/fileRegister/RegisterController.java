@@ -35,6 +35,8 @@ public class RegisterController {
     @FXML
     private TextField usernameTextField;
 
+    public String password;
+
     @FXML
     private void cancelButtonOnAction(ActionEvent actionEvent) {
         Stage stage = (Stage) cancelButton.getScene().getWindow();
@@ -43,7 +45,8 @@ public class RegisterController {
 
     @FXML
     private void registerButtonOnAction(ActionEvent actionEvent) throws IOException {
-        String password = passwordTextField.getText();
+        password = passwordTextField.getText();
+
         if(checkPasswordTheSame(password) == true
             && usernameTextFieldShouldNotBeEmpty() == true) {
             registerUser();
@@ -95,8 +98,6 @@ public class RegisterController {
         String lastname = lastnameTextField.getText();
         String username = usernameTextField.getText();
         String password = passwordTextField.getText();
-
-
 
         String insertToRegister = "INSERT INTO users_information(lastname,firstname,username,password) " +
                 "VALUES ('" + firstname + "','" +  lastname + "','" + username + "','" + password + "')";

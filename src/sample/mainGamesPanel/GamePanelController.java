@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -35,6 +36,8 @@ public class GamePanelController implements Initializable {
     private Button cancelButton;
     @FXML
     private Button logOutButton;
+    @FXML
+    private Button searchButton;
 
     @FXML
     private Label usernameLabel;
@@ -45,6 +48,14 @@ public class GamePanelController implements Initializable {
     @FXML
     private ImageView ImageUser; // TODO: image store in sql database. User the user should be able to change own image !
 
+    @FXML
+    private Label MessageAboutFindingFriend;
+
+    @FXML
+    private TextField findYourFriendTextField;
+
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -53,6 +64,35 @@ public class GamePanelController implements Initializable {
          lastnameLabel.setText(Data_User.lastname);
     }
 
+    @FXML
+    private void searchButtonOnAction() throws IOException {
+        DataBaseConnection connectNow = new DataBaseConnection();
+        Connection connectionDB = connectNow.getConnection();
+
+        String verifyFindYourFriend = "SELECT count(1) FROM users_information " +
+                "WHERE username = '" + findYourFriendTextField.getText() + "'";
+
+
+        try{
+            Statement statement = connectionDB.createStatement();
+            ResultSet queryResult = statement.executeQuery(verifyFindYourFriend);
+
+            while (queryResult.next()){
+                if(queryResult.getInt(1) == 1) {
+                    MessageAboutFindingFriend.setText("I found a nickname");
+                }else {
+                    MessageAboutFindingFriend.setText("not found a nickname");
+                }
+
+            }
+
+
+        }catch (Exception e){
+            e.printStackTrace();
+            e.getCause();
+        }
+
+    }
 
 
     @FXML
