@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="572.0" prefWidth="888.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.mainGamesPanel.SettingsTabController">
+    <TextField fx:id="phoneTextField" layoutX="399.0" layoutY="200.0" prefHeight="36.0" prefWidth="272.0" promptText="Phone number" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+    <Label fx:id="usernameLabel1" layoutX="523.0" layoutY="63.0" prefHeight="27.0" prefWidth="128.0" text="Settings" textFill="WHITE">
+    </Label>
+    <Separator layoutX="314.0" layoutY="119.0" opacity="0.17" prefHeight="11.0" prefWidth="430.0" />
+    <TextField fx:id="firstnameTextField" layoutX="399.0" layoutY="250.0" prefHeight="36.0" prefWidth="272.0" promptText="Firstname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+    <TextField fx:id="lastnameTextField" layoutX="399.0" layoutY="304.0" prefHeight="36.0" prefWidth="272.0" promptText="Lastname" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+    <PasswordField fx:id="passwordTextField" layoutX="399.0" layoutY="362.0" prefHeight="36.0" prefWidth="272.0" promptText="Password" style="-fx-border-color: #964319; -fx-border-radius: 20; -fx-background-color: #2A0033; -fx-background-insets: 0;" />
+    <Button fx:id="changeButton" layoutX="399.0" layoutY="422.0" mnemonicParsing="false" onAction="#changeButtonOnAction" prefHeight="36.0" prefWidth="272.0" style="-fx-background-color: #FC8831;" text="Change" textFill="WHITE" />
+
+</AnchorPane>

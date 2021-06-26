@@ -1,0 +1,18 @@
+.tab{
+    -fx-pref-width: 250;
+    -fx-pref-height: 125;
+    -fx-background-color:  #FC8831;
+    -fx-alignment: CENTER;
+    -fx-font-size: 18px;
+
+}
+
+.tab-header-background{
+    -fx-background-color: #2a0033;
+}
+
+.jfx-tab-pane .tab-selected-line{
+    -fx-border-color: #fff;
+}
+
+
