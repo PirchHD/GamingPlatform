@@ -894,47 +894,59 @@
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <index id="282" parent="277" name="Friends_users_information_id_account_fk">
+    <column id="282" parent="277" name="username_your_friend">
+      <Position>4</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <column id="283" parent="277" name="firstname_your_friend">
+      <Position>5</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <column id="284" parent="277" name="lastname_your_friend">
+      <Position>6</Position>
+      <DataType>varchar(45)|0s</DataType>
+    </column>
+    <index id="285" parent="277" name="Friends_users_information_id_account_fk">
       <ColNames>id_account</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="283" parent="277" name="PRIMARY">
+    <key id="286" parent="277" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="284" parent="277" name="Friends_users_information_id_account_fk">
+    <foreign-key id="287" parent="277" name="Friends_users_information_id_account_fk">
       <ColNames>id_account</ColNames>
       <RefTableName>users_information</RefTableName>
       <RefColNames>id_account</RefColNames>
     </foreign-key>
-    <column id="285" parent="278" name="id_account">
+    <column id="288" parent="278" name="id_account">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="286" parent="278" name="firstname">
+    <column id="289" parent="278" name="firstname">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="287" parent="278" name="lastname">
+    <column id="290" parent="278" name="lastname">
       <Position>3</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="288" parent="278" name="username">
+    <column id="291" parent="278" name="username">
       <Position>4</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="289" parent="278" name="password">
+    <column id="292" parent="278" name="password">
       <Position>5</Position>
       <DataType>varchar(45)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="290" parent="278" name="PRIMARY">
+    <key id="293" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_account</ColNames>
       <Primary>1</Primary>

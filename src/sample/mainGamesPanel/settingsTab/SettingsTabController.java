@@ -1,4 +1,4 @@
-package sample.mainGamesPanel;
+package sample.mainGamesPanel.settingsTab;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

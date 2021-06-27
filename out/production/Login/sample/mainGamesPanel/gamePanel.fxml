@@ -2,10 +2,11 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -39,26 +40,51 @@
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="logOutButton" layoutX="35.0" layoutY="794.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="36.0" prefWidth="128.0" style="-fx-background-color: #CE201C;" text="log out" textFill="WHITE" />
+            <Button fx:id="logOutButton" layoutX="25.0" layoutY="794.0" mnemonicParsing="false" onAction="#logOutButtonOnAction" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: #CE201C;" text="log out" textFill="WHITE" />
             <Separator layoutX="179.0" layoutY="14.0" opacity="0.17" orientation="VERTICAL" prefHeight="918.0" prefWidth="28.0" />
             <TabPane layoutX="194.0" layoutY="15.0" prefHeight="913.0" prefWidth="1058.0" tabClosingPolicy="UNAVAILABLE">
               <tabs>
                   <Tab text="HOME">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="627.0" />
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="171.0" prefWidth="850.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="14.0" prefHeight="79.0" prefWidth="138.0" text="Home:" textFill="WHITE">
+                                 <font>
+                                    <Font size="36.0" />
+                                 </font>
+                              </Label>
+                           </children></AnchorPane>
                     </content>
                   </Tab>
-                <Tab text="Your scores" >
-                    <fx:include source="yourScoreTab.fxml"/>
+                <Tab text="Your scores">
+                    <fx:include source="yourScoreTab/yourScoreTab.fxml" />
                 </Tab>
-                  <Tab fx:id="globalScoreTabPage" text="Global Score" >
-                      <fx:include source="globalScoreTab.fxml"/>
+                  <Tab fx:id="globalScoreTabPage" text="Global Score">
+                      <fx:include source="GlobalScoreTab/globalScoreTab.fxml" />
                   </Tab>
                   <Tab fx:id="settingsTabPage" text="Settings">
-                  <fx:include source="settingsTab.fxml"/>
+                  <fx:include source="settingsTab/settingsTab.fxml" />
                   </Tab>
               </tabs>
             </TabPane>
+            <Label fx:id="lastnameLabel1" layoutX="14.0" layoutY="274.0" prefHeight="27.0" prefWidth="138.0" text="Find your friend:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="findYourFriendTextField" layoutX="11.0" layoutY="301.0" prefHeight="36.0" prefWidth="169.0" promptText="Nick" style="-fx-border-color: #964319; -fx-background-color: #2A0033; -fx-background-insets: 0; -fx-border-radius: 20;" />
+            <Button fx:id="searchButton" layoutX="12.0" layoutY="348.0" mnemonicParsing="false" onAction="#searchButtonOnAction" prefHeight="36.0" prefWidth="162.0" style="-fx-background-color: #FC8831;" text="Search" textFill="WHITE" />
+            <Label fx:id="lastnameLabel11" layoutX="15.0" layoutY="410.0" prefHeight="27.0" prefWidth="154.0" text="Friends list:" textFill="WHITE">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="MessageAboutFindingFriend" alignment="CENTER" layoutX="23.0" layoutY="388.0" prefHeight="18.0" prefWidth="154.0" textFill="RED" />
+            <TableView fx:id="tableView" layoutX="14.0" layoutY="437.0" prefHeight="335.0" prefWidth="154.0">
+              <columns>
+                  <TableColumn fx:id="col_username" prefWidth="153.19999408721924" text="username" />
+              </columns>
+            </TableView>
          </children>
       </Pane>
    </children>
